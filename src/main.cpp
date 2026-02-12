@@ -59,14 +59,14 @@ void scanWiFiNetworks() {
   Serial.println("========================================");
   Serial.println("Scanning for networks...");
 
-  // LED on during scan
-  digitalWrite(LED_PIN, HIGH);
+  // LED blue during scan
+  neopixelWrite(LED_PIN, 0, 0, 40);
 
   // Start scan (set to true for async scan)
   int networkCount = WiFi.scanNetworks(false, true);
 
   // LED off after scan
-  digitalWrite(LED_PIN, LOW);
+  neopixelWrite(LED_PIN, 0, 0, 0);
 
   Serial.println("Scan complete!");
   Serial.println("========================================\n");
